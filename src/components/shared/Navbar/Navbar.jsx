@@ -9,7 +9,7 @@ const Navbar = () => {
         <li><Link className='rounded'>Categories</Link></li>
     </>
     return (
-        <div className="border border-b-primary shadow-xl">
+        <div className="border-2 border-b-neutral shadow-xl">
             <div className='navbar w-4/5 mx-auto'>
                 <div className="navbar-start">
                     <div className="dropdown">

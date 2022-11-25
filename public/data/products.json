@@ -1,6 +1,5 @@
 [
     {
-        "_id": 1,
         "name": "macbook air m1",
         "originalPrice": 100,
         "sellingPrice": 70,
@@ -13,10 +12,10 @@
         "createdAt": "November 25, 2022",
         "userId": 1,
         "picture": "https://cdn.vectorstock.com/i/1000x1000/35/52/placeholder-rgb-color-icon-vector-32173552.webp",
-        "status": "listed"
+        "status": "listed",
+        "isVerified": false
     },
     {
-        "_id": 2,
         "name": "macbook air m2",
         "originalPrice": 120,
         "sellingPrice": 95,
@@ -29,10 +28,10 @@
         "createdAt": "November 25, 2022",
         "userId": 1,
         "picture": "https://cdn.vectorstock.com/i/1000x1000/35/52/placeholder-rgb-color-icon-vector-32173552.webp",
-        "status": "listed"
+        "status": "listed",
+        "isVerified": true
     },
     {
-        "_id": 3,
         "name": "hp pavilion ce14",
         "originalPrice": 80,
         "sellingPrice": 65,
@@ -45,6 +44,7 @@
         "createdAt": "November 25, 2022",
         "userId": 1,
         "picture": "https://cdn.vectorstock.com/i/1000x1000/35/52/placeholder-rgb-color-icon-vector-32173552.webp",
-        "status": "listed"
+        "status": "listed",
+        "isVerified": false
     }
 ]

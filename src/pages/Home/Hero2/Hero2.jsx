@@ -4,7 +4,7 @@ import searchLeft from '../../../assets/search-left.png';
 
 const Hero2 = () => {
     return (
-        <div className='bg-purple-600 min-h-[50vh] my-10 rounded-3xl relative'>
+        <div className='bg-accent min-h-[50vh] my-10 rounded-3xl relative'>
             <img className='absolute bottom-0 -right-[100px] max-w-xs md:max-w-sm lg:max-w-full h-auto' src={searchBoy} alt="" srcset="" />
             <div className='absolute top-1/2 left-1/2'>
                 <h1>Best deals</h1>

@@ -1,0 +1,22 @@
+[
+    {
+        "_id": "01",
+        "name": "Apple",
+        "icon": "data/category icons/apple.svg"
+    },
+    {
+        "_id": "02",
+        "name": "Lenevo",
+        "icon": "data/category icons/lenevo.png"
+    },
+    {
+        "_id": "03",
+        "name": "Dell",
+        "icon": "data/category icons/dell.png"
+    },
+    {
+        "_id": "04",
+        "name": "Hp",
+        "icon": "data/category icons/hp.png"
+    }
+]

@@ -9,7 +9,7 @@ const Navbar = () => {
         <li><Link className='rounded'>Categories</Link></li>
     </>
     return (
-        <div className="border border-b-primary">
+        <div className="border border-b-primary shadow-xl">
             <div className='navbar w-4/5 mx-auto'>
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -22,7 +22,7 @@ const Navbar = () => {
                     </div>
                     <Link to="/" className='flex items-center'>
                         <img src={logo} alt="lappy-logo" className='w-16' />
-                        <Link className="btn btn-ghost normal-case text-xl">lappy</Link>
+                        <p className="btn btn-ghost normal-case text-xl">lappy</p>
                     </Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">

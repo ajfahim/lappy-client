@@ -1,0 +1,50 @@
+[
+    {
+        "_id": 1,
+        "name": "macbook air m1",
+        "originalPrice": 100,
+        "sellingPrice": 70,
+        "condition": "same as new",
+        "description": "No dent, No scratch. Same as new.",
+        "isAdvertised": true,
+        "categoryId": 1,
+        "location": "Dhaka",
+        "yearsOfUse": 1,
+        "createdAt": "November 25, 2022",
+        "userId": 1,
+        "picture": "https://cdn.vectorstock.com/i/1000x1000/35/52/placeholder-rgb-color-icon-vector-32173552.webp",
+        "status": "listed"
+    },
+    {
+        "_id": 2,
+        "name": "macbook air m2",
+        "originalPrice": 120,
+        "sellingPrice": 95,
+        "condition": "same as new",
+        "description": "No dent, No scratch. Same as new.",
+        "isAdvertised": true,
+        "categoryId": 1,
+        "location": "Dhaka",
+        "yearsOfUse": 1,
+        "createdAt": "November 25, 2022",
+        "userId": 1,
+        "picture": "https://cdn.vectorstock.com/i/1000x1000/35/52/placeholder-rgb-color-icon-vector-32173552.webp",
+        "status": "listed"
+    },
+    {
+        "_id": 3,
+        "name": "hp pavilion ce14",
+        "originalPrice": 80,
+        "sellingPrice": 65,
+        "condition": "same as new",
+        "description": "No dent, No scratch. Same as new.",
+        "isAdvertised": true,
+        "categoryId": 4,
+        "location": "Dhaka",
+        "yearsOfUse": 1,
+        "createdAt": "November 25, 2022",
+        "userId": 1,
+        "picture": "https://cdn.vectorstock.com/i/1000x1000/35/52/placeholder-rgb-color-icon-vector-32173552.webp",
+        "status": "listed"
+    }
+]

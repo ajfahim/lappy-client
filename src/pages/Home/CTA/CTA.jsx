@@ -4,7 +4,7 @@ import laptop from '../../../assets/laptop.png'
 
 const CTA = () => {
     return (
-        <div className='mt-16 grid grid-cols-1 md:grid-cols-2 gap-10 '>
+        <div className='mt-16 grid grid-cols-1 lg:grid-cols-2 gap-10 '>
             <div className='bg-neutral text-neutral-content flex items-center justify-around rounded-3xl'>
                 <div className='text-center'>
                     <h3 className='text-2xl font-bold'>Shop MacBooks</h3>

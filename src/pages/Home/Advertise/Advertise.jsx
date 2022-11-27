@@ -11,10 +11,14 @@ const getAdvertisedProducts = async () => {
 }
 
 const Advertise = () => {
-    const { data: products, isLoading } = useQuery({
+    const { data: products, isLoading, error: advertiseError } = useQuery({
         queryKey: ['advertisedProducts'],
         queryFn: getAdvertisedProducts
     })
+    console.log("error: ", advertiseError)
+    if (advertiseError) {
+        return <h2 className="text-xl">{advertiseError.message}</h2>
+    }
 
     return (
 

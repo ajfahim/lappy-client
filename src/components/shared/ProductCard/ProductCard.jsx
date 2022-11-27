@@ -29,11 +29,11 @@ const ProductCard = ({ product }) => {
                             <p>{description}</p>
                         }
                     </div>
-                    <div className="card-actions justify-around items-center">
+                    <div className="card-actions justify-between     items-center">
                         <span className='text-5xl font-bold text-primary'>${sellingPrice}</span>
                         <div>
                             <Link to={`/products/${_id}`}><button className="btn btn-accent">See Details</button></Link>
-                            <button className="btn btn-neutral">Book Now</button>
+                            <button className="ml-1 btn btn-neutral">Book Now</button>
                         </div>
                     </div>
                 </div>

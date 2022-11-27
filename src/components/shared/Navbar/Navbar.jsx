@@ -5,7 +5,7 @@ import { FcBusinessman } from 'react-icons/fc'
 
 const Navbar = () => {
     const menuItems = <>
-        <li><Link className='rounded'>Home</Link></li>
+        <li><Link to='/' className='rounded'>Home</Link></li>
         <li><Link className='rounded'>Categories</Link></li>
     </>
     return (

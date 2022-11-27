@@ -1,12 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../../logo.png'
 import { FcBusinessman } from 'react-icons/fc'
+import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import toast from 'react-hot-toast';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { toast.success("Logged out successfully") })
+            .catch(err => console.log(err));
+    }
     const menuItems = <>
         <li><Link to='/' className='rounded'>Home</Link></li>
         <li><Link className='rounded'>Categories</Link></li>
+        {
+            user?.email && <>
+                <li><Link className='rounded'>Dashboard</Link></li>
+            </>
+        }
+
     </>
     return (
         <div className="border-2 border-b-neutral shadow-xl">
@@ -34,15 +49,30 @@ const Navbar = () => {
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-50 rounded-full">
-                                {/* <img alt='' src="https://placeimg.com/80/80/people" /> */}
-                                <FcBusinessman size={40}></FcBusinessman>
+                                {
+                                    user?.email
+                                        ?
+                                        <img alt='' src={user.photoURL} className="w-10" />
+                                        :
+                                        <FcBusinessman size={40}></FcBusinessman>
+                                }
+
+
                             </div>
                         </label>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                            {
+                                user?.email
+                                    ?
+                                    <li><button onClick={handleLogOut}>Logout</button></li>
+                                    :
+                                    <>
+                                        <li><Link to='/register'>Register</Link></li>
+                                        <li><Link to='/login'>Login</Link></li>
+                                    </>
+                            }
 
-                            <li><Link to='/register'>Register</Link></li>
-                            <li><Link to='/login'>Login</Link></li>
-                            <li><Link>Logout</Link></li>
+
                         </ul>
                     </div>
                 </div>

@@ -3,17 +3,26 @@ import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { FcGoogle } from 'react-icons/fc'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import useToken from '../../hooks/useToken';
 import { imageUpload } from '../../utils/imageUploader';
 
 const Register = () => {
 
     const [signupError, setSignupError] = useState("");
 
-    const { signup, googleLogin, updateUserData } = useContext(AuthContext)
+    const { signup, googleLogin, updateUserData } = useContext(AuthContext);
+
+    const [createdUserEmail, setCreatedUserEmail] = useState('')
+    const [token] = useToken(createdUserEmail);
 
     const { register, handleSubmit, formState: { errors } } = useForm();
+
+    const navigate = useNavigate();
+    if (token) {
+        navigate('/');
+    }
 
     const handleSignUp = async (data) => {
 
@@ -40,8 +49,10 @@ const Register = () => {
                 updateUserData(userInfo)
                     .then(async () => {
                         const dbResult = await saveUserToDB(dbuser);
-                        if (dbResult.data.acknowledged) {
-                            toast.success("Registered successfully")
+
+                        if (dbResult.acknowledged) {
+                            toast.success("Registered successfully");
+                            setCreatedUserEmail(data.email);
                         }
                     })
                     .catch(err => console.log(err));
@@ -55,7 +66,7 @@ const Register = () => {
 
             const res = await axios.post("http://localhost:5000/users", user);
             console.log("save to db", res);
-            return res
+            return res.data
 
 
         }
@@ -114,7 +125,7 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text text-red-500">
                                     {
-                                        errors.name && errors.name?.message
+                                        errors.phone && errors.phone?.message
                                     }
                                 </span>
                             </label>
@@ -122,7 +133,7 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="text" {...register("password", {
+                                <input type="password" {...register("password", {
                                     required: "Password is required",
                                     minLength: { value: 6, message: "Must be at least 6 characters long" },
                                     pattern: { value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/, message: "Minimum six characters, at least one uppercase letter, one lowercase letter, one number and one special character" }

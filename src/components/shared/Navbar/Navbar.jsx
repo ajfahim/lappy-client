@@ -15,10 +15,10 @@ const Navbar = () => {
     }
     const menuItems = <>
         <li><Link to='/' className='rounded'>Home</Link></li>
-        <li><Link className='rounded'>Categories</Link></li>
+        <li><Link to='/categories' className='rounded'>Categories</Link></li>
         {
             user?.email && <>
-                <li><Link className='rounded'>Dashboard</Link></li>
+                <li><Link to='/dashboard' className='rounded'>Dashboard</Link></li>
             </>
         }
 
@@ -48,11 +48,14 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-50 rounded-full">
+                            <div className="w-50 border-neutral border-2 rounded-full">
                                 {
                                     user?.email
                                         ?
-                                        <img alt='' src={user.photoURL} className="w-10" />
+                                        <div className='flex'>
+                                            <img alt='' src={user.photoURL} />
+                                            <p className='text-black'>Hey {user?.displayName || user?.name}!</p>
+                                        </div>
                                         :
                                         <FcBusinessman size={40}></FcBusinessman>
                                 }

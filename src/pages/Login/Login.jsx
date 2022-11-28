@@ -49,6 +49,7 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 setLoginError("");
+                setLoginUserEmail(user.email);
                 toast.success("logged in successfully")
             })
             .catch(err => setLoginError(err.message))

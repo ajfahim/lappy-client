@@ -29,10 +29,12 @@ const Register = () => {
         console.log(data)
         const image = data.img[0];
         const imageUrl = await imageUpload(image);
+        const userRole = data.isSeller ? "seller" : "user"
+        console.log(userRole)
         const dbuser = {
             email: data.email,
             name: data.name,
-            isSeller: data.isSeller,
+            role: userRole,
             photoUrl: imageUrl,
             phone: data.phone
         }
@@ -78,6 +80,7 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setCreatedUserEmail(user.email);
                 setSignupError("")
             })
             .catch(err => setSignupError(err.message))

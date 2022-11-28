@@ -6,12 +6,12 @@ const Category = ({ category }) => {
     return (
         <Link to={`/category/${_id}`}>
             <div className='mx-auto flex flex-col items-center'>
-                <div className="avatar">
-                    <div className="w-28 rounded-full">
-                        <img src={icon} alt='' />
+                <div>
+                    <div className="w-24 rounded-full">
+                        <img className=' ' src={icon} alt='' />
                     </div>
                 </div>
-                <p className='mt-2 font-bold'>{name}</p>
+                <p className='mt-3 font-bold'>{name}</p>
             </div>
         </Link>
     );

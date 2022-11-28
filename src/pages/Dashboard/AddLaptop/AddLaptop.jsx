@@ -1,4 +1,4 @@
-import { useMutation, useQuery } from '@tanstack/react-query';
+import { QueryClient, useMutation, useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { format } from 'date-fns';
 
@@ -37,7 +37,8 @@ const AddLaptop = () => {
             mutationFn: postLaptopData,
             onSuccess: () => {
                 toast.success("Data added successfully");
-                navigate('dashboard/my-products')
+                QueryClient.invalidateQueries({ queryKey: ['laptops'] })
+                navigate('dashboard/my-laptops')
             }
 
         }
@@ -63,7 +64,7 @@ const AddLaptop = () => {
             userEmail: user?.email,
             picture: imageURL,
             status: "listed",
-            isVerified: false
+
         }
         console.log(laptopData)
         mutation.mutate(laptopData)

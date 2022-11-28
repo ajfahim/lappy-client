@@ -47,22 +47,32 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-50 border-neutral border-2 rounded-full">
-                                {
-                                    user?.email
-                                        ?
-                                        <div className='flex'>
-                                            <img alt='' src={user.photoURL} />
-                                            <p className='text-black'>Hey {user?.displayName || user?.name}!</p>
-                                        </div>
-                                        :
-                                        <FcBusinessman size={40}></FcBusinessman>
-                                }
+                        <div className='flex items-center'>
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-50 border-neutral border-2 rounded-full">
+                                    {
+                                        user?.email
+                                            ?
+                                            <div>
+                                                <img alt='' src={user.photoURL} />
+
+                                            </div>
+                                            :
+                                            <FcBusinessman size={40}></FcBusinessman>
+                                    }
 
 
-                            </div>
-                        </label>
+
+                                </div>
+
+                            </label>
+                            {
+                                user?.email && <p className='text-black ml-2'>Hey {user?.displayName || user?.name}!</p>
+
+
+                            }
+
+                        </div>
                         <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                             {
                                 user?.email

@@ -16,9 +16,11 @@ const Advertise = () => {
         queryFn: getAdvertisedProducts
     })
     console.log("error: ", advertiseError)
+
     if (advertiseError) {
         return <h2 className="text-xl">{advertiseError.message}</h2>
     }
+
 
     return (
 

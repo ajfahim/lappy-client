@@ -18,7 +18,7 @@ const Laptops = () => {
     console.log(laptops)
     return (
         <div className='w-4/5 mx-auto mt-10'>
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-3 mx-auto'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mx-auto'>
                 {
                     laptops?.map(laptop => <ProductCard key={laptop._id} product={laptop}></ProductCard>)
                 }

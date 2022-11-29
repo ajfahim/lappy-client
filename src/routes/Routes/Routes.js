@@ -1,6 +1,7 @@
 import DisplayError from "../../components/shared/DisplayError/DisplayError";
 import DashboardLayout from "../../layouts/DashboardLayout/DashboardLayout";
 import Main from "../../layouts/Main/Main";
+import Blog from "../../pages/Blog/Blog";
 import AddLaptop from "../../pages/Dashboard/AddLaptop/AddLaptop";
 import AllUsers from "../../pages/Dashboard/AllUsers/AllUsers";
 import Dashboard from "../../pages/Dashboard/Dashboard";
@@ -9,6 +10,7 @@ import Home from "../../pages/Home/Home";
 import ByCategory from "../../pages/Laptops/ByCategory";
 import Laptops from "../../pages/Laptops/Laptops";
 import Login from "../../pages/Login/Login";
+import NotFound from "../../pages/NotFound/NotFound";
 import Register from "../../pages/Register/Register";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
@@ -41,7 +43,11 @@ export const router = createBrowserRouter([
             {
                 path: '/category/:id',
                 loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`),
-                element: <ByCategory></ByCategory>
+                element: <PrivateRoute><ByCategory></ByCategory></PrivateRoute>
+            },
+            {
+                path: "/blog",
+                element: <Blog></Blog>
             }
         ]
     },
@@ -70,5 +76,9 @@ export const router = createBrowserRouter([
             }
 
         ]
+    },
+    {
+        path: "*",
+        element: <NotFound></NotFound>
     }
 ])

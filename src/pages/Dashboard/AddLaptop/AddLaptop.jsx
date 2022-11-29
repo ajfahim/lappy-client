@@ -1,4 +1,4 @@
-import { QueryClient, useMutation, useQuery } from '@tanstack/react-query';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import axios from 'axios';
 import { format } from 'date-fns';
 
@@ -32,13 +32,15 @@ const AddLaptop = () => {
         queryFn: getCategories
     })
 
+    const queryClient = useQueryClient();
+
     const mutation = useMutation(
         {
             mutationFn: postLaptopData,
             onSuccess: () => {
                 toast.success("Data added successfully");
-                QueryClient.invalidateQueries({ queryKey: ['laptops'] })
-                navigate('dashboard/my-laptops')
+                queryClient.invalidateQueries({ queryKey: ['laptops'] })
+                navigate('/dashboard/my-laptops')
             }
 
         }
@@ -57,7 +59,7 @@ const AddLaptop = () => {
             sellingPrice: data.sellingPrice,
             condition: data.condition,
             description: data.description,
-            categoryId: data.category,
+            category: data.category,
             location: data.location,
             yearsOfUse: used,
             createdAt: format(new Date(), "PP"),
@@ -108,7 +110,7 @@ const AddLaptop = () => {
                                             :
                                             categories?.map(category => <option
                                                 key={category._id}
-                                                value={category._id}>
+                                                value={category.name}>
                                                 {category.name}</option>)
                                     }
 

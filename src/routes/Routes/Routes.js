@@ -42,7 +42,7 @@ export const router = createBrowserRouter([
             ,
             {
                 path: '/category/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`),
+                loader: ({ params }) => fetch(`https://lappy-server.vercel.app/categories/${params.id}`),
                 element: <PrivateRoute><ByCategory></ByCategory></PrivateRoute>
             },
             {

@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
 
     const getUserData = async () => {
         if (user) {
-            const res = await axios.get(`http://localhost:5000/users/${user?.email}`);
+            const res = await axios.get(`https://lappy-server.vercel.app/users/${user?.email}`);
             console.log("userData: ", res)
             return res.data
         }

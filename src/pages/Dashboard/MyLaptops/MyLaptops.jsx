@@ -26,7 +26,7 @@ const MyLaptops = () => {
         else {
             postData = { isAdvertised: true }
         }
-        const res = await axios.put(`http://localhost:5000/products/${data._id}`, postData);
+        const res = await axios.put(`https://lappy-server.vercel.app/products/${data._id}`, postData);
 
         return res.data;
     }
@@ -48,7 +48,7 @@ const MyLaptops = () => {
     )
 
     const getLaptopData = async () => {
-        const res = await axios.get(`http://localhost:5000/products/user/${user?.email}`);
+        const res = await axios.get(`https://lappy-server.vercel.app/products/user/${user?.email}`);
 
 
         return res.data

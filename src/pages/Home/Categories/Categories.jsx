@@ -6,7 +6,7 @@ import Loading from '../../../components/shared/Loading/Loading';
 import Category from './Category/Category';
 
 const getCategories = async () => {
-    const res = await axios.get("http://localhost:5000/categories")
+    const res = await axios.get("https://lappy-server.vercel.app/categories")
     return res.data;
 }
 

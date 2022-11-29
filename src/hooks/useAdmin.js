@@ -5,13 +5,13 @@ const useAdmin = email => {
     const [isAdmin, setIsAdmin] = useState(false);
     const [isAdminLoading, setIsAdminLoading] = useState(true);
     const getData = async (email) => {
-        const res = await axios.get(`http://localhost:5000/users/admin/${email}`)
+        const res = await axios.get(`https://lappy-server.vercel.app/users/admin/${email}`)
         return res.data
     }
     useEffect(() => {
         if (email) {
 
-            fetch(`http://localhost:5000/users/admin/${email}`)
+            fetch(`https://lappy-server.vercel.app/users/admin/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);

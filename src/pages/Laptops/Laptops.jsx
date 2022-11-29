@@ -7,7 +7,7 @@ import ProductCard from '../../components/shared/ProductCard/ProductCard';
 const Laptops = () => {
 
     const getLaptops = async () => {
-        const res = await axios.get("http://localhost:5000/products");
+        const res = await axios.get("https://lappy-server.vercel.app/products");
         console.log(res)
         return res.data
     }

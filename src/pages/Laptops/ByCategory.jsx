@@ -9,7 +9,7 @@ import ProductCard from '../../components/shared/ProductCard/ProductCard';
 const ByCategory = () => {
     const laptops = useLoaderData();
     // const getLaptops = async () => {
-    //     const res = await axios.get(`http://localhost:5000/categories/${}`);
+    //     const res = await axios.get(`https://lappy-server.vercel.app/categories/${}`);
     //     console.log(res)
     //     return res.data
     // }

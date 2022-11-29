@@ -6,7 +6,7 @@ import Loading from '../../../components/shared/Loading/Loading';
 import ProductCard from '../../../components/shared/ProductCard/ProductCard';
 
 const getAdvertisedProducts = async () => {
-    const res = await axios.get("http://localhost:5000/advertised")
+    const res = await axios.get("https://lappy-server.vercel.app/advertised")
     return res.data;
 }
 

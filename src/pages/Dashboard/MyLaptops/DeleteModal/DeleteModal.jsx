@@ -7,7 +7,7 @@ const DeleteModal = ({ laptop }) => {
 
 
     const deleteLaptop = async (data) => {
-        const res = await axios.delete(`http://localhost:5000/products/${data._id}`)
+        const res = await axios.delete(`https://lappy-server.vercel.app/products/${data._id}`)
         return res.data
     }
     const queryClient = useQueryClient()

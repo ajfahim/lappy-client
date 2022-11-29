@@ -16,7 +16,7 @@ const ChangeStatus = ({ laptop }) => {
 
     const changeStatusData = async (data) => {
 
-        const res = await axios.put(`http://localhost:5000/products/${laptop._id}`, { status: data });
+        const res = await axios.put(`https://lappy-server.vercel.app/products/${laptop._id}`, { status: data });
         return res.data;
     }
     const handleChangeStatus = () => {

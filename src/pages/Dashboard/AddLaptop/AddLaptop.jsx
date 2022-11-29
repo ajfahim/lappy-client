@@ -13,12 +13,12 @@ import { imageUpload } from "../../../utils/imageUploader"
 
 
 const getCategories = async () => {
-    const res = await axios.get("http://localhost:5000/categories")
+    const res = await axios.get("https://lappy-server.vercel.app/categories")
     return res.data;
 }
 
 const postLaptopData = async (data) => {
-    const res = await axios.post("http://localhost:5000/products", data)
+    const res = await axios.post("https://lappy-server.vercel.app/products", data)
     return res.data
 }
 

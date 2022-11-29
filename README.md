@@ -1,8 +1,8 @@
 # **Lappy Client**
 
-> # Live Link:  
-> # Git Repo for API:  
-> # Live API:  
+> # Live Link:  https://lappy-1b996.web.app
+> # Git Repo for API:  https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-ajfahim
+> # Live API:  https://lappy-server.vercel.app/
 
 Lappy is a dummy application build with **React** and some other **React Libraries** to sell used laptops
 
@@ -21,7 +21,6 @@ Lappy is a dummy application build with **React** and some other **React Librari
 
 
 # Technologies used:
-- React
 - Firebase Authentication
 - useState Hook
 - useEffect Hook
@@ -31,11 +30,7 @@ Lappy is a dummy application build with **React** and some other **React Librari
 - Tailwindcss
 - Daisy ui
 - React Icons
-- React Tostify
-- React ro pdf
+- React Hot Toast
+- Tanstack Query (React Query)
 
-# **API Links**
-- https://learn-native-server.vercel.app/categories
-- https://learn-native-server.vercel.app/category/:id
-- https://learn-native-server.vercel.app/courses
-- https://learn-native-server.vercel.app/course/:id
+

@@ -66,7 +66,7 @@ const Register = () => {
 
         const saveUserToDB = async (user) => {
 
-            const res = await axios.post("http://localhost:5000/users", user);
+            const res = await axios.post("https://lappy-server.vercel.app/users", user);
             console.log("save to db", res);
             return res.data
 

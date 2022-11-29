@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Category = ({ category }) => {
-    const { name, _id, icon } = category
+    const { name, icon } = category
     return (
-        <Link to={`/category/${_id}`}>
+        <Link to={`/category/${name}`}>
             <div className='mx-auto flex flex-col items-center'>
                 <div>
                     <div className="w-24 rounded-full">

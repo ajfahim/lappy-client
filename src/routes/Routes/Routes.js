@@ -6,6 +6,8 @@ import AllUsers from "../../pages/Dashboard/AllUsers/AllUsers";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import MyLaptops from "../../pages/Dashboard/MyLaptops/MyLaptops";
 import Home from "../../pages/Home/Home";
+import ByCategory from "../../pages/Laptops/ByCategory";
+import Laptops from "../../pages/Laptops/Laptops";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
 import AdminRoute from "../AdminRoute/AdminRoute";
@@ -30,6 +32,16 @@ export const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login></Login>
+            },
+            {
+                path: '/laptops',
+                element: <Laptops></Laptops>
+            }
+            ,
+            {
+                path: '/category/:id',
+                loader: ({ params }) => fetch(`http://localhost:5000/categories/${params.id}`),
+                element: <ByCategory></ByCategory>
             }
         ]
     },

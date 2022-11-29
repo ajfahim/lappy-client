@@ -20,27 +20,29 @@ const Advertise = () => {
     if (advertiseError) {
         return <h2 className="text-xl">{advertiseError.message}</h2>
     }
+    console.log(products)
+    if (products?.length > 0) {
+        return (
 
+            <div>
+                <div className='flex justify-between items-center'>
+                    <h5 className='text-primary font-bold text-3xl mt-10 mb-5'>Featured/Advertised</h5>
+                    <Link className='link link-accent' to='/advertised'>See All</Link>
+                </div>
+                {
+                    isLoading ?
+                        <Loading></Loading>
+                        :
+                        <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 place-items-center '>
+                            {products.map(product => <ProductCard key={product._id} product={product}></ProductCard>).slice(0, 3)}
+                        </div>
 
-    return (
-
-        <div>
-            <div className='flex justify-between items-center'>
-                <h5 className='text-primary font-bold text-3xl mt-10 mb-5'>Featured/Advertised</h5>
-                <Link className='link link-accent' to='/advertised'>See All</Link>
+                }
             </div>
-            {
-                isLoading ?
-                    <Loading></Loading>
-                    :
-                    <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 place-items-center '>
-                        {products.map(product => <ProductCard key={product._id} product={product}></ProductCard>).slice(0, 3)}
-                    </div>
 
-            }
-        </div>
+        );
+    }
 
-    );
 };
 
 export default Advertise;

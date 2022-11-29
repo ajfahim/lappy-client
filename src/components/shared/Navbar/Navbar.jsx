@@ -15,7 +15,7 @@ const Navbar = () => {
     }
     const menuItems = <>
         <li><Link to='/' className='rounded'>Home</Link></li>
-        <li><Link to='/categories' className='rounded'>Categories</Link></li>
+        <li><Link to='/laptops' className='rounded'>All Laptops</Link></li>
         {
             user?.email && <>
                 <li><Link to='/dashboard' className='rounded'>Dashboard</Link></li>

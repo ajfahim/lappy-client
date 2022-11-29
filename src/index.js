@@ -5,9 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
+import axios from 'axios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const queryClient = new QueryClient()
+
+
+axios.interceptors.request.use((request) => {
+
+  request.headers.authorization = `bearer ${localStorage.getItem('accessToken')}`
+  return request
+})
+
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
